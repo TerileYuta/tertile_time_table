@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <title>TimeTables | 学習サポートアプリ</title>
+    <style>
+        main{
+            margin: 0 2%;
+            line-height: 2;
+            font-family: 'MS PMincho';
+        }
+
+        header{
+            text-align: right;
+            border-bottom: thick solid black;
+            font-family: 'Times New Roman';
+        }
+
+        h3{
+            border-right: thick solid black;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+
+        input::-ms-clear {
+            visibility:hidden;
+        }
+        
+        .font{
+            font-family: Times;
+            text-align: center;
+        }
+
+        .click{
+            width: 300px;                           
+            display: block;                 
+            padding:  15px;                 
+            font-size:  15px;               
+            text-decoration: none;          
+            color:  #fff;                   
+            background-color: #00BCD4;      
+            border-radius:  5px;            
+            transition: 0.5s;              
+            margin:  0 auto;  
+        }
+
+        .click:hover{
+            opacity:  0.7;                  
+        }
+
+        .button{
+            text-align: left;
+        }
+        
+        div{
+            display: inline-block;
+            text-align: center;
+            margin: 0 1%;
+        }
+
+        div:hover{
+            color: rgb(99, 99, 99);
+        }
+
+        .entry{
+            text-align: center;
+        }
+
+        .contents{
+            width: 1000px;
+            height: 1000px;
+        }
+
+        .contents{
+            width: 100%;
+            height: 100%;
+        }
+
+        footer{
+            margin: 0 10%;
+            clear: both;
+            border-top: thick solid black;
+            color: black;            
+        }
+
+        .SNS{
+            float: left;
+        }
+
+        .twitter{
+            float: right;
+            font-family: 'Times';
+        }
+
+    </style>
+
+    <link rel="shortcut icon" href="Picture/favicon.png" type="image/png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158967626-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158967626-1');
+    </script>
+
+</head>
+<body>
+    <header>
+        <center><img src="Picture/title.png" alt="alt" width="22%" height="22%"></center>
+        <a href="About.html"><h3 class="right">ヘルプ&nbsp;</h3></a>
+    </header>
+
+    <main>
+        <center>
+            <!--広告-->
+            <script src="https://adm.shinobi.jp/o/fe585f9c302df1e2525575871941557e"></script><br><br>
+        
+            <div class="entry">
+                <!--入力欄-->
+                <h2><dic id="tom_day"></dic>の時間割</h2>
+                <font size="4">１時間目&nbsp;</font>
+                <select id="1">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>                
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="1_sub"><br><br>
+
+                <font size="4">２時間目&nbsp;</font>
+                <select id="2">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>            
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="2_sub"><br><br>
+
+                <font size="4">３時間目&nbsp;</font>
+                <select id="3">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="3_sub"><br><br>
+
+                <font size="4">４時間目&nbsp;</font>
+                <select id="4">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="4_sub"><br><br>
+                <font size="4">５時間目&nbsp;</font>
+                <select id="5">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="5_sub"><br><br>
+                <font size="4">６時間目&nbsp;</font>
+                <select id="6">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="6_sub"><br><br>
+
+                <font size="4">７時間目&nbsp;</font>
+                <select id="7">
+                    <option value="">教科</option>
+                    <option value="国語">国語</option>
+                    <option value="地理">地理</option>
+                    <option value="歴史">歴史</option>
+                    <option value="公民">公民</option>
+                    <option value="数学">数学</option>
+                    <option value="理科">理科</option>
+                    <option value="体育">体育</option>
+                    <option value="保険">保健</option>
+                    <option value="芸術">芸術</option>
+                    <option value="外国語">外国語</option>
+                    <option value="家庭">家庭</option>
+                    <option value="情報">情報</option>
+                    <option value="その他">その他</option>
+                </select>
+                &nbsp;&nbsp;<input type="text" placeholder="備考" id="7_sub"><br><br>
+
+                <div class="button"><input type="button" value="登録" onclick="register()" class="click"></div>
+            </div><br><br>
+            
+            <div>
+                <dic id="月_select"></dic><br>
+                <div id="mon" onclick="chenge_day('月')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div>
+                <div id="火_select"></div><br>
+                <div id="tue" onclick="chenge_day('火')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div>
+                <div id="水_select"></div><br>
+                <div id="wed" onclick="chenge_day('水')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div>
+                <div id="木_select"></div><br>
+                <div id="thu" onclick="chenge_day('木')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div>
+                <div id="金_select"></div><br>
+                <div id="fry" onclick="chenge_day('金')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div>
+                <div id="土_select"></div><br>
+                <div id="sat" onclick="chenge_day('土')"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            </div>
+
+            <!--表-->
+            <div id="table"></div><br>
+
+            <h2>自主学習の管理</h2>
+            <select id="study_subject">
+                <option value="">教科</option>
+                <option value="国語">国語</option>
+                <option value="地理">地理</option>
+                <option value="歴史">歴史</option>
+                <option value="公民">公民</option>
+                <option value="数学">数学</option>
+                <option value="理科">理科</option>
+                <option value="体育">体育</option>
+                <option value="保険">保健</option>
+                <option value="芸術">芸術</option>
+                <option value="外国語">外国語</option>
+                <option value="家庭">家庭</option>
+                <option value="情報">情報</option>
+                <option value="その他">その他</option>
+            </select>
+            &nbsp;&nbsp;<input type="text" placeholder="学習時間（分）" id="study_time"><br><br>
+            <div class="button"><input type="button" value="登録" onclick="register2()" class="click"></div><br><br>
+            <div id="study_time_table"></div>
+        </center>
+
+        <script>
+            resizeTo(800,600)
+
+            //年月日を取得
+            var date = new Date ();
+            
+            //年の取得
+            var year = date.getFullYear();
+            
+            //月日の取得
+            var month = date.getMonth();
+            var day = date.getDate();
+
+            //曜日の取得
+            var dayOfWeek = date.getDay();	
+            var dayOfWeekStr = ["月", "火", "水", "木", "金", "土", "日" ][dayOfWeek];
+            document.getElementById("tom_day").innerHTML = dayOfWeekStr + "曜日";
+            last_day = ""
+
+            //基本の時間割表
+            var basic1 = [["月曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+            var basic2 = [["火曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+            var basic3 = [["水曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+            var basic4 = [["木曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+            var basic5 = [["金曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+            var basic6 = [["土曜日", "    ", "    "], ["時間", "教科", "備考"], ["1", "    ", "    "], ["2", "    ", "    "], ["3", "    ", "    "], ["4", "    ", "    "], ["5", "    ", "    "],["6", "    ", "    "],["7", "    ", "    "]];
+
+            //ロード
+            function load(){
+                //リセット
+                document.getElementById("mon").innerHTML = null;
+                document.getElementById("tue").innerHTML = null;
+                document.getElementById("wed").innerHTML = null;
+                document.getElementById("thu").innerHTML = null;
+                document.getElementById("fry").innerHTML = null;
+                document.getElementById("sat").innerHTML = null;
+                document.getElementById("table").innerHTML = null;
+
+                //テーブルの作成
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("月")), "mon");
+                }
+                catch{
+                    makeTable(basic1, "mon");
+                    localStorage.setItem("月", JSON.stringify(basic1));
+                }
+
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("火")), "tue");
+                }
+                catch{
+                    makeTable(basic2, "tue");
+                    localStorage.setItem("火", JSON.stringify(basic2));
+                }
+
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("水")), "wed");
+                }
+                catch{
+                    makeTable(basic3, "wed");
+                    localStorage.setItem("水", JSON.stringify(basic3));
+                }
+
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("木")), "thu");
+                }
+                catch{
+                    makeTable(basic4, "thu");
+                    localStorage.setItem("木", JSON.stringify(basic4));
+                }
+
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("金")), "fry");
+                }
+                catch{
+                    makeTable(basic5, "fry");
+                    localStorage.setItem("金", JSON.stringify(basic5));
+                }
+
+                try{
+                    makeTable(JSON.parse(localStorage.getItem("土")), "sat");
+                }
+                catch{
+                    makeTable(basic6, "sat");
+                    localStorage.setItem("土", JSON.stringify(basic6));
+                }
+
+                //Subjectsのセット
+                subjects = localStorage.getItem("subjects");
+                subjects = JSON.parse(subjects);
+
+                var japanese = 0;
+                var geography = 0;
+                var history = 0;
+                var citizen = 0;
+                var math = 0;
+                var science = 0;
+                var physical_education = 0;
+                var health = 0;
+                var art = 0;
+                var foreign_language = 0;
+                var home_economics = 0;
+                var information = 0;
+                var other = 0;
+
+                var sub_list = []
+
+                //数値の代入
+                for (var i = 0;  i < subjects.length; i++) {
+                    for(j=0; j < 8; j++){
+                        for(x=0; x < 3; x++){
+                            if(subjects[i][j][x] == "国語"){
+                            japanese++;
+                            }
+
+                            if(subjects[i][j][x] == "地理"){
+                                geography++;
+                            }
+
+                            if(subjects[i][j][x] == "歴史"){
+                                history++;
+                            }
+
+                            if(subjects[i][j][x] == "公民"){
+                                citizen++;
+                            }
+
+                            if(subjects[i][j][x] == "数学"){
+                                math++;
+                            }
+
+                            if(subjects[i][j][x] == "理科"){
+                                science++;
+                            }
+
+                            if(subjects[i][j][x] == "体育"){
+                                physical_education++;
+                            }
+
+                            if(subjects[i][j][x] == "保健"){
+                                health++;
+                            }
+
+                            if(subjects[i][j][x] == "芸術"){
+                                art++;
+                            }
+
+                            if(subjects[i][j][x] == "外国語"){
+                                foreign_language++;
+                            }      
+
+                            if(subjects[i][j][x] == "家庭"){
+                                home_economics++;
+                            }  
+
+                            if(subjects[i][j][x] == "情報"){
+                                information++;
+                            }    
+
+                            if(subjects[i][j][x] == "その他"){
+                                other++;
+                            }    
+                        }  
+                    } 
+                }         
+
+                //数値の合計
+                var all_subjects = japanese + geography + history + citizen + math + science + physical_education + health + art + foreign_language + home_economics + information + other;   
+
+                sub_list.push(["割合", ""])
+                sub_list.push(["教科", "%(パーセント)"])
+                sub_list.push(["国語", Math.round((japanese / all_subjects) * 100)])
+                sub_list.push(["地理", Math.round((geography / all_subjects) * 100)])
+                sub_list.push(["歴史", Math.round((history / all_subjects) * 100)])
+                sub_list.push(["公民", Math.round((citizen / all_subjects) * 100)])                    
+                sub_list.push(["数学", Math.round((math / all_subjects) * 100)])                    
+                sub_list.push(["理科", Math.round((science / all_subjects) * 100)])                    
+                sub_list.push(["体育", Math.round((physical_education / all_subjects) * 100)])                    
+                sub_list.push(["保健", Math.round((health / all_subjects) * 100)])                    
+                sub_list.push(["芸術", Math.round((art / all_subjects) * 100)])                    
+                sub_list.push(["外国語", Math.round((foreign_language / all_subjects) * 100)])                    
+                sub_list.push(["家庭科", Math.round((home_economics / all_subjects) * 100)])                    
+                sub_list.push(["情報", Math.round((information / all_subjects )* 100)])  
+                sub_list.push(["その他", Math.round((other / all_subjects )* 100)])  
+
+                makeTable(sub_list, "table");
+            }
+
+            //入力された文字列を取得
+            function get_text(id){
+                try{
+                    return document.getElementById(id).value;
+                }
+
+                catch{
+                    return "----";
+                }
+            }
+
+            //選択ボタン
+            function chenge_day(sellect_day){
+                dayOfWeekStr = sellect_day;
+                var day_table = localStorage.getItem(dayOfWeekStr);
+                day_table = JSON.parse(day_table)
+                document.getElementById("tom_day").innerHTML = dayOfWeekStr + "曜日";
+
+                for(i=1; i <= 6; i++){
+                    if(day_table[i + 1][1] == "    "){
+                        document.getElementById(String(i)).value = null;
+                    }else{
+                        document.getElementById(String(i)).value = day_table[i + 1][1];
+                    }
+
+                    if(day_table[i + 1][2] == "    "){
+                        document.getElementById(String(i) + "_sub").value = null;
+                    }else{
+                        document.getElementById(String(i) + "_sub").value = day_table[i + 1][2];
+                    }
+                }
+
+                document.getElementById("月_select").innerHTML = ""
+                document.getElementById("火_select").innerHTML = ""
+                document.getElementById("水_select").innerHTML = ""
+                document.getElementById("木_select").innerHTML = ""
+                document.getElementById("金_select").innerHTML = ""
+                document.getElementById("土_select").innerHTML = ""
+                select_day = sellect_day + "_select"
+                document.getElementById(select_day).innerHTML = "選択中"
+            }
+
+            acs = localStorage.getItem("acs") 
+
+            //リセット
+            if(dayOfWeekStr == "日"){
+                localStorage.clear();
+
+                localStorage.setItem("月", JSON.stringify(basic1));
+                localStorage.setItem("火", JSON.stringify(basic2));
+                localStorage.setItem("水", JSON.stringify(basic3));
+                localStorage.setItem("木", JSON.stringify(basic4));
+                localStorage.setItem("金", JSON.stringify(basic5));
+                localStorage.setItem("土", JSON.stringify(basic6));  
+                localStorage.setItem("subjects", JSON.stringify([]));  
+
+                localStorage.setItem("acs", "OK");
+            }
+
+            //ローカルストレージへの保存
+            function register(){
+                var count_load = localStorage.getItem(dayOfWeekStr);
+                count_load = [[dayOfWeekStr + "曜日", "    ", "    "],
+                              ["時間", "教科", "備考"], 
+                              ["1", get_text("1"), get_text("1_sub")],
+                              ["2", get_text("2"), get_text("2_sub")],
+                              ["3", get_text("3"), get_text("3_sub")],
+                              ["4", get_text("4"), get_text("4_sub")],
+                              ["5", get_text("5"), get_text("5_sub")],
+                              ["6", get_text("6"), get_text("6_sub")],
+                              ["7", get_text("7"), get_text("7_sub")]]
+                                              
+                localStorage.setItem(dayOfWeekStr, JSON.stringify(count_load));
+
+                mon = JSON.parse(localStorage.getItem("月"));
+                tue = JSON.parse(localStorage.getItem("火"));
+                wed = JSON.parse(localStorage.getItem("水"));
+                thu = JSON.parse(localStorage.getItem("木"));
+                fry = JSON.parse(localStorage.getItem("金"));
+                sat = JSON.parse(localStorage.getItem("土"));
+
+                var subjects = []
+
+                subjects.push(mon);
+                subjects.push(tue);
+                subjects.push(wed);
+                subjects.push(thu);
+                subjects.push(fry);
+                subjects.push(sat);
+
+                localStorage.setItem("subjects", JSON.stringify(subjects));
+
+                load();
+            }
+
+            function register2(){
+                study_data = [get_text("study_subject"), +(get_text("study_time"))]
+                if(study_data[1] == null){
+                    study_data[1] = 0
+                }
+
+                var study_local_data = JSON.parse(localStorage.getItem("time"));
+
+                try{
+                    study_count = study_local_data.length
+                }
+
+                catch{
+                    study_count = 1
+                    study_local_data = []
+                }
+
+                flag = false
+
+                for(i=0; i < study_count; i++){
+                    try{
+                        if(study_local_data[i][0] == study_data[0]){
+                            if(study_data[1] == 0){
+                                flag = true
+                            }
+
+                            else{
+                                study_local_data[i][1] = study_local_data[i][1] + Number(study_data[1]);
+                                flag = true
+                            }
+                        } 
+                    }
+
+                    catch{
+                        study_local_data.push(study_data);
+                        flag = true
+                    }
+                }
+
+                if(flag == false){
+                    study_local_data.push(study_data);
+                }
+
+                localStorage.setItem("time", JSON.stringify(study_local_data));
+
+                time_load();
+            }
+
+            function time_load(){
+                var study_local_data = JSON.parse(localStorage.getItem("time"));
+
+                try{
+                    study_count = study_local_data.length
+                }
+
+                catch{
+                    study_count = 1
+                }
+
+                all_study_time = 0
+                study_list = []
+
+                study_list.push(["教科", "割合", "学習時間"])
+
+                for(i=0; i < study_count; i++){
+                    all_study_time = all_study_time + study_local_data[i][1]
+                }    
+
+                for(i=0; i < study_count; i++){
+                    study_list.push([study_local_data[i][0], (Math.round(study_local_data[i][1] / all_study_time * 100) + "%"), study_local_data[i][1] + "分"])
+                } 
+
+                study_list.push(["合計", "100%", all_study_time + "分"])
+
+                document.getElementById("study_time_table").innerHTML = null;
+
+                makeTable(study_list, "study_time_table") 
+            }
+
+
+            //表の作成
+            function makeTable(data, tableId){
+                var rows=[];
+                var table = document.createElement("table");
+
+                document.getElementById(tableId).appendChild(table);
+                    
+                for(i = 0; i < data.length; i++){
+                    rows.push(table.insertRow(-1));  
+                        for(j = 0; j < data[0].length; j++){
+                            cell=rows[i].insertCell(-1);
+                            cell.appendChild(document.createTextNode(data[i][j]));
+                            
+                            if((i==0) || (i == 1)){
+                                cell.style.backgroundColor = "#4faaf5"; 
+                            }else{
+                                cell.style.backgroundColor = "#ddd"; 
+                            }
+
+                            if(j==0){
+                                cell.style.backgroundColor = "#4faaf5"; 
+                            }
+                        }
+                    }
+                document.getElementById(tableId).appendChild(table);
+            }
+
+            load()    
+            time_load()  
+        </script>
+    </main>
+
+    <footer>
+        <div class="SNS">
+            <br>
+            <!--LINE-->
+            <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data- url="http://azarashi54.html.xdomain.jp/TimeTables.html" data-color="default" data-size="small" data-count="true" style="display: none;"></div>
+            <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+            <!--Twitter-->
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><br>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+            <!--Facebook-->
+            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fazarashi54.html.xdomain.jp%2FTimeTables.html&width=450&layout=standard&action=like&size=small&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe><br>
+            <h4>Create By TertileCrystal</h4>
+            <img src="Picture/Logo.jpg" alt="alt" width="100px" height="100px">
+        </div>
+        <div class="twitter">
+            <!--公式Twitter-->
+            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【学生向けウェブサイト紹介】<br>『Tertile イラストレーター』<br>プレゼンなどに使いやすい無料のイラスト配布<br>サイトです。今はまだイラストは少ないですが、<br>精力的に更新していきますので、<br>『このイラストが欲しい』などのご要望を<br>お待ちしております。<br>URL<a href="https://t.co/furP94FlFe">https://t.co/furP94FlFe</a><a href="https://twitter.com/hashtag/%E7%84%A1%E6%96%99%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#無料イラスト</a> <a href="https://t.co/c1rvi8lwwn">pic.twitter.com/c1rvi8lwwn</a></p>&mdash; Tertile Crystal (@TertileCrystal) <a href="https://twitter.com/TertileCrystal/status/1235361524169863168?ref_src=twsrc%5Etfw">March 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </footer>
+</body>
+</html>
